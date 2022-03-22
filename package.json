@@ -1,0 +1,34 @@
+{
+  "name": "jenkinstest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-vm-modules node_modules/jest/bin/jest.js && node src/server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "build": "node src/database/xmlIngest.js",
+    "db": "node src/database/utils.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fquevedo/jenkinsTest.git"
+  },
+  "author": "fquevedo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fquevedo/jenkinsTest/issues"
+  },
+  "homepage": "https://github.com/fquevedo/jenkinsTest#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "http": "^0.0.1-security",
+    "mongodb": "^4.4.1",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
+  }
+}
