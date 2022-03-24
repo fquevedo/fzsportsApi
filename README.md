@@ -58,8 +58,7 @@ This section list frameworks/libraries used in the project.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-For continue, make sure Docker is installed already.
-In order to install the project, its necesary a MongoDB Server. Let's pull an image and run it locally using Docker.
+In order to install the project, make sure Docker is installed already. Let's pull a MongoDB image and run it locally using Docker.
 * MongoDB
   ```sh
   docker pull mongodb
@@ -69,7 +68,7 @@ In order to install the project, its necesary a MongoDB Server. Let's pull an im
   ```
 
 ### Installation
-For continue, make sure Git, Npm are installed already.
+For continue, make sure GIT and NPM are installed already.
 1. Clone the repository
    ```sh
    git clone https://github.com/fquevedo/fzsportsApi.git
@@ -102,9 +101,9 @@ For continue, make sure Git, Npm are installed already.
    ```
 Use the following links for test the endpoints
 
-Get all teams [/api/team](https://localhost:3000/api/team)
-Get players who play in :teamId [/api/team](https://localhost:3000/api/team)
-Get players who play in :position [/api/team](https://localhost:3000/api/team)
+1. Get all teams [/api/team](https://localhost:3000/api/team)
+2. Get players who play in :teamId [/api/team](https://localhost:3000/api/team)
+3. Get players who play in :position [/api/team](https://localhost:3000/api/team)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
