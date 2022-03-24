@@ -29,7 +29,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project consists in simple API Server that allows to request Team and Players information obtained from a no relational database, imported from a xml source gived by FzSports. Also, contains the deployment of a VPC infrastructure, 4 subnets, ALB and a Listener Frontend using Terraform with AWS provider, Dockers and Jenkins technologies as services.
+This project consists on a simple API Server that allows to request Team and Players information obtained from a no relational database, imported from a xml source gived by FzSports. Also, contains the services (in IaaS Folder) to deploy a VPC infrastructure with 4 subnets (2 public and 2 private), a Security Group and an ALB Listener Frontend using Terraform with AWS as provider. Docker and Jenkins files are implemented too.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
