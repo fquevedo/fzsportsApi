@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 // all teams
 app.get('/api/team', async (req, res) => {
-    const collection = await executeFindAll('Teams');
+    const collection = await executeFindAll('teams');
 
     res.json(collection);
 })

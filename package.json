@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node --experimental-vm-modules node_modules/jest/bin/jest.js && node src/server.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "build": "node src/database/xmlIngest.js",
+    "build": "node src/database/ingest.js",
     "db": "node src/database/utils.js"
   },
   "repository": {
