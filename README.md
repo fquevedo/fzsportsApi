@@ -112,9 +112,9 @@ For continue, make sure GIT and NPM are installed already.
    ```
 Use the following links for test the endpoints
 
-1. Get all teams [/api/team](https://localhost:3000/api/team)
-2. Get players who play in :teamId [/api/teams/:teamId/players](https://localhost:3000/api/teams/143/players)
-3. Get players who play as :position [/api/teams/players/delantero](https://localhost:3000/api/teams/players/delantero)
+1. Get all teams [/api/team](http://localhost:3000/api/team)
+2. Get players who play in :teamId [/api/teams/:teamId/players](http://localhost:3000/api/teams/143/players)
+3. Get players who play as :position [/api/teams/players/delantero](http://localhost:3000/api/teams/players/delantero)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
