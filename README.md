@@ -126,7 +126,11 @@ Ensure that AWS CLI is installed, and properly configured with an AWS IAM profil
    ```sh
    cd IaaS/terraform-aws
    ```
-2. Deploy the infrastructure
+2. Initialize backend
+   ```sh
+   terraform init
+   ```
+3. Deploy the infrastructure
    ```sh
    terraform apply --auto-approve
    ```
