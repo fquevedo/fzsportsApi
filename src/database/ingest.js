@@ -64,7 +64,7 @@ http.get(xmlUrl, (res) => {
                                 nombreCorto: player['nombreCorto'][0],
                                 fechaBaja: player['fechaBaja'][0],
                                 ladoHabil: player['ladoHabil'][0],
-                                fechaNacimiento: player['fechaNacimiento'][0],
+                                fechaNacimiento: new Date(player['fechaNacimiento'][0]).toISOString(),
                                 horaNacimiento: player['horaNacimiento'][0],
                                 peso: player['peso'][0],
                                 altura: player['altura'][0],
