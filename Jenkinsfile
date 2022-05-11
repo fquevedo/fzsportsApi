@@ -20,7 +20,7 @@ pipeline {
       }
 
     }
-    stage("Build") {
+    stage("Build App") {
       steps {
         echo 'installing dependencies..'
         sh "npm install"
@@ -36,6 +36,19 @@ pipeline {
     stage("Integration Test") {
       steps {
         echo 'Integration Test'
+      }
+    }
+    stage("Build Docker Image") {
+      steps {
+        echo "Build Docker Image fquevedo/fzsports:${env.BUILD_TAG}"
+        script {
+          dockerImage = docker.build("fquevedo/fzsports:${env.BUILD_TAG}")
+        }
+      }
+    }
+    stage("Push Docker Image") {
+      steps {
+        echo 'Push Docker Image'
       }
     }
   }
