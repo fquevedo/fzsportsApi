@@ -1,20 +1,19 @@
 {
-  "name": "jenkinstest",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/server.js",
-  "type": "module",
+  "name":     "jenkinstest",
+  "version":  "1.0.0",
+  "main":     "src/server.js",
+  "type":     "module",
   "scripts": {
-    "start": "node --experimental-vm-modules node_modules/jest/bin/jest.js && node src/server.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "build": "node src/database/ingest.js",
-    "db": "node src/database/utils.js"
+    "start":  "node --experimental-vm-modules node_modules/jest/bin/jest.js && node src/server.js",
+    "test":   "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "build":  "node src/database/ingest.js",
+    "db":     "node src/database/utils.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fquevedo/jenkinsTest.git"
+    "url":  "git+https://github.com/fquevedo/jenkinsTest.git"
   },
-  "author": "fquevedo",
+  "author":  "fquevedo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fquevedo/jenkinsTest/issues"
