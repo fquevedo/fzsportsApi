@@ -20,8 +20,11 @@ pipeline {
       }
 
     }
-    stage("Compile") {
+    stage("Build") {
       steps {
+        echo 'installing dependencies..'
+        sh "npm run install"
+        echo 'preparing some necesary stuffs (db)'
         sh "npm run build"
       }
     }
