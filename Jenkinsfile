@@ -23,7 +23,7 @@ pipeline {
     stage("Build") {
       steps {
         echo 'installing dependencies..'
-        sh "npm run install"
+        sh "npm install"
         echo 'preparing some necesary stuffs (db)'
         sh "npm run build"
       }
