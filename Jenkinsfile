@@ -48,7 +48,7 @@ pipeline {
       steps {
         echo "Build Docker Image ${registryName}"
         script {
-          dockerImage = docker.build "https://${registryUrl}/${registryName}/${JOB_NAME}-${env.BUILD_NUMBER}" 
+          dockerImage = docker.build "${registryUrl}/${registryName}/${JOB_NAME}-${env.BUILD_NUMBER}" 
         }
       }
     }
