@@ -21,6 +21,7 @@ pipeline {
         echo "JOB_NAME - $env.JOB_NAME"
         echo "BUILD_TAG - $env.BUILD_TAG"
         echo "BUILD_URL - $env.BUILD_URL"
+      
       }
 
     }
@@ -55,8 +56,9 @@ pipeline {
       steps {
 
         script {
-          docker.withRegistry("https://${registryUrl}", registryCredential) {
-            dockerImage.push()
+          withCredentials([usernamePassword(credentialsId: 'ACR', passwordVariable: '', usernameVariable: '')]) {
+              // some block
+              echo "username is $USERNAME"
           }
 
         }
