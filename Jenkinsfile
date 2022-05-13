@@ -54,8 +54,16 @@ pipeline {
       steps {
 
         script {
-          docker.withRegistry( "https://${registryUrl}", registryCredential)
-          dockerImage.push()
+
+          docker.withRegistry("https://${registryUrl}", registryCredential) {
+
+              def customImage = docker.build("${registryName}")
+
+              /* Push the container to the custom Registry */
+              customImage.push()
+          }
+
+   
         }
 
         
