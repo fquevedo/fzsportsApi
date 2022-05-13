@@ -12,7 +12,7 @@ pipeline {
   }
   stages {
     stage('Checkout') {
-      steps {
+      steps { 
         sh 'docker version'
         echo "Build"
         echo "PATH - $PATH"
@@ -46,13 +46,12 @@ pipeline {
       steps {
         echo "Build Docker Image fquevedo/fzsports:${env.BUILD_TAG}"
         script {
-          dockerImage = docker.build("fquevedo/fzsports:${env.BUILD_TAG}")
+          dockerImage = docker.build(registryName)
         }
       }
     }
     stage("Push Docker Image") {
       steps {
-        echo 'Push Docker Image'
 
         script {
           docker.withRegistry( "http://${registryUrl}", registryCredential)
