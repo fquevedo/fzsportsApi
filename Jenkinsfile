@@ -55,11 +55,9 @@ pipeline {
 
         script {
 
-          docker.withRegistry("https://${registryUrl}", registryCredential) {
-
-              /* Push the container to the custom Registry */
-              dockerImage.push()
-          }
+     
+          dockerImage.push()
+         
 
    
         }
