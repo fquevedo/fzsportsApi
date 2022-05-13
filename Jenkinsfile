@@ -44,9 +44,9 @@ pipeline {
     }
     stage("Build Docker Image") {
       steps {
-        echo "Build Docker Image fquevedo/fzsports:${env.BUILD_TAG}"
+        echo "Build Docker Image ${registryName}"
         script {
-          dockerImage = docker.build(registryName)
+          dockerImage = docker.build registryName 
         }
       }
     }
