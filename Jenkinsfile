@@ -5,6 +5,10 @@ pipeline {
     dockerHome = tool 'myDocker'
     nodeHome = tool 'myNode'
     PATH = "$dockerHome/bin:$nodeHome/bin:$PATH"
+    registryName = "timining"
+    registryUrl = "timining.azurecr.io"
+    registryCredential = "ACR"
+
   }
   stages {
     stage('Checkout') {
@@ -49,6 +53,11 @@ pipeline {
     stage("Push Docker Image") {
       steps {
         echo 'Push Docker Image'
+
+        script {
+          docker.withRegistry( "http://${registryUrl}", registryCredential)
+          dockerImage.push()
+        }
       }
     }
   }
