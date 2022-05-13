@@ -7,8 +7,8 @@ pipeline {
     PATH = "$dockerHome/bin:$nodeHome/bin:$PATH"
     registryUrl = "timining.azurecr.io"
     registryName = "timining"
-    
     registryCredential = "ACR"
+    dockerImage = ''
 
   }
   stages {
@@ -62,5 +62,5 @@ pipeline {
         }
       }
     }
-  
+  }
 }
