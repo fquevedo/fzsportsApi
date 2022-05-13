@@ -5,8 +5,9 @@ pipeline {
     dockerHome = tool 'myDocker'
     nodeHome = tool 'myNode'
     PATH = "$dockerHome/bin:$nodeHome/bin:$PATH"
-    registryName = "timining"
     registryUrl = "timining.azurecr.io"
+    registryName = "timining"
+    
     registryCredential = "ACR"
 
   }
@@ -46,9 +47,9 @@ pipeline {
     }
     stage("Build Docker Image") {
       steps {
-        echo "Build Docker Image ${registryName}"
+        echo "Build Docker Image ${registryUrl}/${registryName}/${JOB_NAME}:${env.BUILD_NUMBER}"
         script {
-          dockerImage = docker.build "${registryUrl}/${registryName}/${JOB_NAME}-${env.BUILD_NUMBER}" 
+          dockerImage = docker.build "${registryUrl}/${registryName}/${JOB_NAME}:${env.BUILD_NUMBER}" 
         }
       }
     }
@@ -56,9 +57,9 @@ pipeline {
       steps {
 
         script {
-          docker.withRegistry("https://${registryUrl}", registryCredential) {
-            dockerImage.push()
-          }
+          
+          dockerImage.push()
+          
 
         }
 
