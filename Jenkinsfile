@@ -55,9 +55,10 @@ pipeline {
 
         script {
 
-     
-          dockerImage.push()
-         
+          docker.withRegistry("https://${registryUrl}", registryCredential) {
+
+              dockerImage.push()
+          }
 
    
         }
