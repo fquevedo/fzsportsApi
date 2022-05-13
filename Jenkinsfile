@@ -48,7 +48,7 @@ pipeline {
       steps {
         echo "Build Docker Image ${registryName}"
         script {
-          dockerImage = docker.build registryName 
+          dockerImage = docker.build "https://${registryUrl}/${registryName}/${JOB_NAME}-${env.BUILD_NUMBER}" 
         }
       }
     }
@@ -56,9 +56,8 @@ pipeline {
       steps {
 
         script {
-          withCredentials([usernamePassword(credentialsId: 'ACR', passwordVariable: '', usernameVariable: '')]) {
-              // some block
-              echo "username is $USERNAME"
+          docker.withRegistry("https://${registryUrl}", registryCredential) {
+            dockerImage.push()
           }
 
         }
