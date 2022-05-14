@@ -49,7 +49,7 @@ pipeline {
       steps {
         echo "Build Docker Image ${registryUrl}/${registryName}/${JOB_NAME}:${env.BUILD_NUMBER}"
         script {
-          dockerImage = docker.build "${registryUrl}/${registryName}/${JOB_NAME}:${env.BUILD_NUMBER}" 
+           dockerImage = docker.build("${registryUrl}/${registryName}/${JOB_NAME}:${env.BUILD_NUMBER}")
         }
       }
     }
@@ -57,6 +57,7 @@ pipeline {
       steps {
         script { 
           docker.withRegistry( "https://${registryUrl}", registryCredential ) {
+            dockerImage = docker.build("${registryUrl}/${registryName}/${JOB_NAME}:${env.BUILD_NUMBER}")
             dockerImage.push()
           } 
         }
