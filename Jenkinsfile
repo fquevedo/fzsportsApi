@@ -59,8 +59,7 @@ pipeline {
           docker.withRegistry("https://${registryUrl}", registryCredential) {
              dockerImage.push()
            }
-          } 
-        }
+        } 
       }
     }
   }
