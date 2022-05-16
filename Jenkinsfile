@@ -56,9 +56,9 @@ pipeline {
     stage("Push Docker Image") {
       steps {
         script { 
-
-            dockerImage = docker.build("${registryUrl}/${registryName}/${JOB_NAME}:${env.BUILD_NUMBER}")
-            dockerImage.push()
+          docker.withRegistry("https://${registryUrl}", registryCredential) {
+             dockerImage.push()
+           }
           } 
         }
       }
