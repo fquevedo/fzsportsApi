@@ -3,7 +3,6 @@ pipeline {
 
   environment {
     dockerHome = tool 'myDocker'
-    nodeHome = tool 'myNode'
     PATH = "$dockerHome/bin:$nodeHome/bin:$PATH"
     registryUrl = "timining.azurecr.io"
     registryName = "timining"
